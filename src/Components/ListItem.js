@@ -5,15 +5,16 @@ import { CSSTransition } from "react-transition-group";
 import ListContainer from "./ListContainer";
 import Border from "./Border";
 
+import LiveEdit from "./LiveEdit";
+
 function Example() {
-  const [showList, setShowList] = useState(true);
   const [showFullList, setShowFullList] = useState(false);
 
   return (
     <ListContainer my={2} width={1}>
       <Flex flexWrap="wrap">
         <Box width={1}>
-          <Link onClick={() => setShowFullList(showList)}>
+          <Link onClick={() => setShowFullList(!showFullList)}>
             <Heading mb={1} as="h3" fontWeight={"500"}>
               align-content
             </Heading>
@@ -30,16 +31,19 @@ function Example() {
         </Box>
       </Flex>
 
-      <CSSTransition
-        in={showFullList}
-        // timeout={300}
-        unmountOnExit
-        onEnter={() => setShowList(false)}
-        onExited={() => setShowList(true)}
-      >
+      <CSSTransition in={showFullList} unmountOnExit>
         <Box>
-          <h1>show this now</h1>
-          <Button onClick={() => setShowFullList(false)}>Close</Button>
+          <Box py={3}>
+            <Text>
+              The align-content property modifies the behavior of the flex-wrap
+              property. It is similar to align-items, but instead of aligning
+              flex items, it aligns flex lines.
+            </Text>
+          </Box>
+
+          <Box pb={2}>
+            <LiveEdit code="<strong>Hello World!</strong>" />
+          </Box>
         </Box>
       </CSSTransition>
 
@@ -56,42 +60,3 @@ export default class ListItem extends React.Component {
     return <Example />;
   }
 }
-
-// import React, { useState } from "react";
-// import ReactDOM from "react-dom";
-// import { Container, Button, Alert } from "react-bootstrap";
-// import { CSSTransition } from "react-transition-group";
-
-// import "./styles.css";
-
-// function Example() {
-//   const [showList, setshowList] = useState(true);
-//   const [showFullList, setShowFullList] = useState(false);
-//   return (
-//     <Container style={{ paddingTop: "2rem" }}>
-//       {showList && (
-//         <Button onClick={() => setShowFullList(true)} size="lg">
-//           Show Message
-//         </Button>
-//       )}
-//       <CSSTransition
-//         in={showFullList}
-//         timeout={300}
-//         classNames="alert"
-//         unmountOnExit
-//         onEnter={() => setShowList(false)}
-//         onExited={() => setShowList(true)}
-//       >
-//         <Alert
-//           variant="primary"
-//           dismissible
-//           onClose={() => setShowFullList(false)}
-//         >
-//           <Alert.Heading>Animated alert message</Alert.Heading>
-//           <p>This alert message is being transitioned in and out of the DOM.</p>
-//           <Button onClick={() => setShowFullList(false)}>Close</Button>
-//         </Alert>
-//       </CSSTransition>
-//     </Container>
-//   );
-// }
