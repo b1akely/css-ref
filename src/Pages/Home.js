@@ -1,6 +1,7 @@
 import React from "react";
-import { Flex, Box, Heading, Button } from "rebass";
+import { Flex, Box, Heading } from "rebass";
 import ListItem from "../Components/ListItem";
+import Input from "../Components/Input";
 
 export default class Home extends React.Component {
   render() {
@@ -11,12 +12,7 @@ export default class Home extends React.Component {
         </Box>
 
         <Box width={1}>
-          <form>
-            <label>
-              <input type="text" name="name" />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+          <Input placeholder="Filter by name" />
         </Box>
 
         <ListItem />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Flex, Box, Heading, Text, Button } from "rebass";
+import { Flex, Box, Heading, Text } from "rebass";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import ListContainer from "./ListContainer";
@@ -7,7 +7,7 @@ import Border from "./Border";
 
 import LiveEdit from "./LiveEdit";
 
-function Example() {
+function ItemToggle() {
   const [showFullList, setShowFullList] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ function Example() {
           <Text>flexbox</Text>
         </Box>
         <Box width={1 / 2} align="right">
-          <Text textAlign={"right"}>
+          <Text color="" textAlign={"right"}>
             <Link to={"/"}>docs</Link>
           </Text>
         </Box>
@@ -33,7 +33,7 @@ function Example() {
 
       <CSSTransition in={showFullList} unmountOnExit>
         <Box>
-          <Box py={3}>
+          <Box py={4}>
             <Text>
               The align-content property modifies the behavior of the flex-wrap
               property. It is similar to align-items, but instead of aligning
@@ -57,6 +57,6 @@ function Example() {
 export default class ListItem extends React.Component {
   render() {
     // const project = this.props.project;
-    return <Example />;
+    return <ItemToggle />;
   }
 }
