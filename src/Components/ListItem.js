@@ -6,11 +6,12 @@ import ListContainer from "./ListContainer";
 import Border from "./Border";
 
 import LiveEdit from "./LiveEdit";
-import { CODE } from "../Examples/Align";
+import { EXAMPLES } from "../Examples";
 
 function ItemToggle(property) {
   const [showFullList, setShowFullList] = useState(false);
   //   const sample = eval(property.property.code);
+  // const example = EXAMPLES.filter(e => e.code === property.property.code);
 
   return (
     <ListContainer my={2} width={1}>
@@ -43,7 +44,7 @@ function ItemToggle(property) {
           </Box>
 
           <Box pb={2}>
-            <LiveEdit noInline code={CODE} />
+            <LiveEdit noInline code={property.property.code} />
           </Box>
         </Box>
       </CSSTransition>
