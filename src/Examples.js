@@ -1,71 +1,51 @@
-// const DemoContainer = ({ children }) => (
+// const Wrapper = ({ children }) => (
 //   <div
 //     style={{
-//       marginLeft: "10px",
-//       marginTop: "3px",
-//       marginRight: "15px",
-//       backgroundColor: "#ffffff",
+//       backgroundColor: "white",
 //       border: "1px solid #c3c3c3",
-//       height: "280px"
+//       height: "100%"
 //     }}
 //   >
 //     {children}
 //   </div>
 // );
 
-// const DemoBox = ({ children }) => (
+// const InnerContainer = () => (
 //   <div
 //     style={{
 //       width: "140px",
-//       height: "278px",
+//       height: "100%",
 //       display: "flex",
-//       alignContent: "center",
+//       alignContent: "start",
 //       border: "1px solid #000000",
 //       flexWrap: "wrap"
 //     }}
 //   >
 //     {" "}
-//     <div
-//       style={{
-//         width: "30px",
-//         height: "30px",
-//         backgroundColor: "red",
-//         display: "block",
-//         boxSizing: "border-box"
-//       }}
-//     />
-//     <div
-//       style={{
-//         width: "30px",
-//         height: "30px",
-//         backgroundColor: "blue",
-//         display: "block",
-//         boxSizing: "border-box"
-//       }}
-//     />
-//     <div
-//       style={{
-//         width: "30px",
-//         height: "30px",
-//         backgroundColor: "green",
-//         display: "block",
-//         boxSizing: "border-box"
-//       }}
-//     />
-//     <div
-//       style={{
-//         width: "30px",
-//         height: "30px",
-//         backgroundColor: "yellow",
-//         display: "block",
-//         boxSizing: "border-box"
-//       }}
-//     />
+//     <Box />
+//     <Box />
+//     <Box />
+//     <Box />
+//     <Box />
+//     <Box />
 //   </div>
 // );
 
+// const Box = () => (
+//   <div
+//     style={{
+//       width: "30px",
+//       height: "30px",
+//       display: "block",
+//       boxSizing: "border-box",
+//       backgroundColor: "black",
+//       border: "1px solid gray"
+//     }}
+//   />
+// );
+
 // render(
-//   <DemoContainer>
-//     <DemoBox />
-//   </DemoContainer>
+//   <Wrapper>
+//     <InnerContainer />
+//   </Wrapper>
 // );
