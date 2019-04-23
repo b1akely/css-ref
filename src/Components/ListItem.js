@@ -6,9 +6,11 @@ import ListContainer from "./ListContainer";
 import Border from "./Border";
 
 import LiveEdit from "./LiveEdit";
+import { CODE } from "../Examples/Align";
 
-function ItemToggle() {
+function ItemToggle(property) {
   const [showFullList, setShowFullList] = useState(false);
+  //   const sample = eval(property.property.code);
 
   return (
     <ListContainer my={2} width={1}>
@@ -16,7 +18,7 @@ function ItemToggle() {
         <Box width={1}>
           <Link onClick={() => setShowFullList(!showFullList)}>
             <Heading mb={1} as="h3" fontWeight={"500"}>
-              align-content
+              {property.property.name}
             </Heading>
           </Link>
         </Box>
@@ -26,7 +28,10 @@ function ItemToggle() {
         </Box>
         <Box width={1 / 2} align="right">
           <Text color="" textAlign={"right"}>
-            <Link to={"/"}>docs</Link>
+            <a href={property.property.url} target="_blank">
+              {" "}
+              docs
+            </a>
           </Text>
         </Box>
       </Flex>
@@ -34,15 +39,11 @@ function ItemToggle() {
       <CSSTransition in={showFullList} unmountOnExit>
         <Box>
           <Box py={4}>
-            <Text>
-              The align-content property modifies the behavior of the flex-wrap
-              property. It is similar to align-items, but instead of aligning
-              flex items, it aligns flex lines.
-            </Text>
+            <Text>{property.property.definition}</Text>
           </Box>
 
           <Box pb={2}>
-            <LiveEdit code="<strong>Hello World!</strong>" />
+            <LiveEdit noInline code={CODE} />
           </Box>
         </Box>
       </CSSTransition>
@@ -56,7 +57,7 @@ function ItemToggle() {
 
 export default class ListItem extends React.Component {
   render() {
-    // const project = this.props.project;
-    return <ItemToggle />;
+    console.log(this);
+    return <ItemToggle property={this.props.property} />;
   }
 }
