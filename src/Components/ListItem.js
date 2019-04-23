@@ -6,12 +6,9 @@ import ListContainer from "./ListContainer";
 import Border from "./Border";
 
 import LiveEdit from "./LiveEdit";
-import { EXAMPLES } from "../Examples";
 
 function ItemToggle(property) {
   const [showFullList, setShowFullList] = useState(false);
-  //   const sample = eval(property.property.code);
-  // const example = EXAMPLES.filter(e => e.code === property.property.code);
 
   return (
     <ListContainer my={2} width={1}>
@@ -29,7 +26,11 @@ function ItemToggle(property) {
         </Box>
         <Box width={1 / 2} align="right">
           <Text color="" textAlign={"right"}>
-            <a href={property.property.url} target="_blank">
+            <a
+              href={property.property.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {" "}
               docs
             </a>

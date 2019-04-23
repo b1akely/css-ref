@@ -6,14 +6,14 @@ export const PROPERTIES = [
     tag: "flexbox",
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS/align-content",
     values: [
-      "stretch",
-      "center",
-      "flex-start",
-      "flex-end",
-      "space-between",
-      "space-around",
-      "initial",
-      "inherit"
+      { name: "stretch", code: `<h1>test1</h1>` },
+      { name: "center", code: `<h1>test2</h1>` },
+      { name: "flex-start", code: `<h1>test3</h1>` },
+      { name: "flex-end", code: `<h1>test4</h1>` },
+      { name: "space-between", code: `<h1>test5</h1>` },
+      { name: "space-around", code: `<h1>test6</h1>` },
+      { name: "initial", code: `<h1>test7</h1>` },
+      { name: "inherit", code: `<h1>test8</h1>` }
     ],
     code: `
 const Wrapper = ({ children }) => (
@@ -87,85 +87,6 @@ render(
       "initial",
       "inherit"
     ],
-    code: `const DemoContainer = ({ children }) => (
-      <div
-        style={{
-          marginLeft: "10px",
-          marginTop: "3px",
-          marginRight: "15px",
-          backgroundColor: "#ffffff",
-          border: "1px solid #c3c3c3",
-          height: "280px"
-        }}
-      >
-        {children}
-      </div>
-    );
-    
-    const DemoBox = ({ children }) => (
-      <div
-        style={{
-          width: "140px",
-          height: "278px",
-          display: "flex",
-          alignContent: "start",
-          border: "1px solid #000000",
-          flexWrap: "wrap"
-        }}
-      >
-        {" "}
-        <div
-          style={{
-            width: "30px",
-            height: "30px",
-            backgroundColor: "red",
-            display: "block",
-            boxSizing: "border-box"
-          }}
-        />
-        <div
-          style={{
-            width: "30px",
-            height: "30px",
-            backgroundColor: "blue",
-            display: "block",
-            boxSizing: "border-box"
-          }}
-        />
-        <div
-          style={{
-            width: "30px",
-            height: "30px",
-            backgroundColor: "green",
-            display: "block",
-            boxSizing: "border-box"
-          }}
-        />
-        <div
-          style={{
-            width: "30px",
-            height: "30px",
-            backgroundColor: "yellow",
-            display: "block",
-            boxSizing: "border-box"
-          }}
-        />
-      </div>
-    );
-    
-    render(
-      <DemoContainer>
-        <DemoBox />
-      </DemoContainer>
-    );
-    `
-  },
-  {
-    name: "align-self",
-    definition:
-      "Sets the align-self value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.",
-    tag: "flexbox",
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS/align-items",
     code: `const DemoContainer = ({ children }) => (
       <div
         style={{
