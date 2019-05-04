@@ -22,7 +22,7 @@ function ItemToggle(property) {
         </Box>
 
         <Box width={1 / 2}>
-          <Text>flexbox</Text>
+          <Text>[tag placeholder]</Text>
         </Box>
         <Box width={1 / 2} align="right">
           <Text color="" textAlign={"right"}>
@@ -44,9 +44,9 @@ function ItemToggle(property) {
             <Text>{property.property.definition}</Text>
           </Box>
 
-          <Box pb={2}>
+          {/* <Box pb={2}>
             <LiveEdit noInline code={property.property.code} />
-          </Box>
+          </Box> */}
         </Box>
       </CSSTransition>
 

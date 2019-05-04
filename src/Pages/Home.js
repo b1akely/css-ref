@@ -16,7 +16,7 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     this.setState({
-      properties: PROPERTIES
+      properties: PROPERTIES.sort()
     });
     this.refs.search.focus();
   }
