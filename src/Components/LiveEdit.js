@@ -26,9 +26,9 @@ const LiveWrapper = styled.div`
 `;
 
 const column = css`
-  flex-basis: 50%;
-  width: 50%;
-  max-width: 50%;
+  flex-basis: 80%;
+  width: 80%;
+  max-width: 80%;
   @media (max-width: 600px) {
     flex-basis: auto;
     width: 100%;
@@ -39,7 +39,7 @@ const column = css`
 const StyledEditor = styled.div`
   background: ${lightGrey};
   font-family: "Source Code Pro", monospace;
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   height: 21.875rem;
   max-height: 21.875rem;
   overflow: auto;
@@ -76,10 +76,10 @@ const LiveEdit = ({ noInline, code }) => (
       <StyledEditor>
         <LiveEditor />
       </StyledEditor>
-      <StyledPreview />
+      {/* <StyledPreview /> */}
     </LiveWrapper>
 
-    <StyledError />
+    {/* <StyledError /> */}
   </StyledProvider>
 );
 
